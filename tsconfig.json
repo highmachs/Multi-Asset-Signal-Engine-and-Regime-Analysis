@@ -1,0 +1,23 @@
+{
+  "include": ["web_dashboard/src/**/*", "common/**/*", "backend/**/*", "drizzle.config.ts", "vite.config.ts", "scripts/**/*"],
+  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
+    "noEmit": true,
+    "module": "ESNext",
+    "strict": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "types": ["node", "vite/client"],
+    "paths": {
+      "@/*": ["./web_dashboard/src/*"],
+      "@shared/*": ["./common/*"]
+    }
+  }
+}

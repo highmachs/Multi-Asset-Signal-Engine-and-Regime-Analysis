@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Bloomberg-esque Palette */
+  --background: 222 47% 6%;      /* Very dark navy/black */
+  --foreground: 210 40% 98%;     /* Crisp white */
+  
+  --card: 224 35% 10%;           /* Slightly lighter than bg */
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 224 35% 10%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 155 100% 40%;       /* Financial Green */
+  --primary-foreground: 144 100% 10%;
+  
+  --secondary: 217 33% 17%;      /* Muted Navy */
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  
+  --accent: 262 83% 65%;         /* Purple for correlations/analysis */
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 33% 20%;
+  --input: 217 33% 20%;
+  --ring: 155 100% 40%;
+  
+  --radius: 0.35rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply tracking-tight;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/90 backdrop-blur-md border border-white/5 shadow-xl;
+  }
+  
+  .data-grid {
+    @apply grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px hsla(var(--primary), 0.5);
+  }
+}
+
+/* Custom Scrollbar for dense data tables */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full hover:bg-muted-foreground/50 transition-colors;
+}
