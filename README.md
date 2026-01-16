@@ -2,7 +2,6 @@
 
 An institutional-grade quantitative research platform for identifying lead-lag dependencies between commodities, equities, and cryptocurrencies.
 
-![Status](https://img.shields.io/badge/Status-Production%20Ready-green)
 
 ## 🧠 Tech Stack
 
